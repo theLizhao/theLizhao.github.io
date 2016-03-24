@@ -29,7 +29,7 @@ task :new do
 			file.puts "categories: #{@categories}"
 #		file.puts "author: pizida"
 #			file.puts "date: #{Time.now}"
-			file.puts "categories: #{@categories}"
+#			file.puts "categories: #{@categories}"
 			file.puts "tags: #{@tag}"
             file.puts "description:#{@subtitle}"
 			file.puts "---"
