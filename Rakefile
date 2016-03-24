@@ -4,17 +4,17 @@ require 'fileutils'
 
 desc "创建新 post"
 task :new do
-  puts "请输入要创建的 post URL："
-	@url = STDIN.gets.chomp
+# puts "请输入要创建的 post URL："
+#	@url = STDIN.gets.chomp
 	puts "请输入 post 标题："
 	@name = STDIN.gets.chomp
-	puts "请输入 post 子标题："
-	@subtitle = STDIN.gets.chomp
+ 	puts "请输入 post 简介："
+ 	@subtitle = STDIN.gets.chomp
 	puts "请输入 post 分类，以空格分隔："
 	@categories = STDIN.gets.chomp
 	puts "请输入 post 标签："
 	@tag = STDIN.gets.chomp
-	@slug = "#{@url}"
+	@slug = "#{@name}"
 	@slug = @slug.downcase.strip.gsub(' ', '-')
 	@date = Time.now.strftime("%F")
 	@post_name = "_posts/#{@date}-#{@slug}.md"
@@ -26,12 +26,13 @@ task :new do
 			file.puts "---"
 			file.puts "layout: post"
 			file.puts "title: #{@name}"
-			file.puts "subtitle: #{@subtitle}"
-			file.puts "author: pizida"
+			file.puts "categories: #{@categories}"
+#		file.puts "author: pizida"
 			file.puts "date: #{Time.now}"
 			file.puts "categories: #{@categories}"
-			file.puts "tag: #{@tag}"
+			file.puts "tags: #{@tag}"
+            file.puts "description:#{@subtitle}"
 			file.puts "---"
 	end
-	exec "vi #{@post_name}"
+#	exec "vi #{@post_name}"
 end
