@@ -10,12 +10,14 @@ task :new do
 	@name = STDIN.gets.chomp
  	puts "请输入 post 简介："
  	@subtitle = STDIN.gets.chomp
-	puts "请输入 post 分类，以空格分隔："
+	puts "请输入 post 分类，以，分隔："
 	@categories = STDIN.gets.chomp
-	puts "请输入 post 标签："
+	puts "请输入 post 标签，以，分隔："
 	@tag = STDIN.gets.chomp
 	@slug = "#{@url}"
 	@slug = @slug.downcase.strip.gsub(' ', '-')
+    @categories = "[#{@categories}]"
+    @tag = "[#{@tag}]"
 	@date = Time.now.strftime("%F")
 	@post_name = "_posts/#{@date}-#{@slug}.md"
 	if File.exist?(@post_name)
