@@ -1,15 +1,14 @@
 ---
 layout: post
 title: 在一个Controller中，使用多个NSURLConnection请求数据
-categories: 网络
 date: 2016-03-24 16:12:04 +0800
-categories: 网络
+categories: 问题处理
 tags: 网络
-description: 每个软件皆有不同之功能，之前项目中有遇到同一Controller中使用多个NSURLConnection，遇到问题发现返回代理中无法判断是哪一个请求的返回数据，而NSURLConnection又无tag值属性。此时如何应对呢？
+description: 每个软件皆有不同之功能需求，之前项目中有遇到同一Controller中使用多个NSURLConnection，遇到问题发现返回代理中无法判断是哪一个请求的返回数据，而NSURLConnection又无tag值属性。此时如何应对呢？
 ---
 ---
 
-    每个软件皆有不同之功能，之前项目中有遇到同一Controller中使用多个NSURLConnection，遇到问题发现返回代理中无法判断是哪一个请求的返回数据，而NSURLConnection又无tag值属性。此时如何应对呢？
+    每个软件皆有不同之功能需求，之前项目中有遇到同一Controller中使用多个NSURLConnection，遇到问题发现返回代理中无法判断是哪一个请求的返回数据，而NSURLConnection又无tag值属性。此时如何应对呢？
 `使用其他属性也可以，如果能使用runtime为其添加一个tag则更好`
 **1.使用AccessibilityLabel属性**
 ---
