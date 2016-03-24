@@ -31,7 +31,7 @@ task :new do
 #			file.puts "date: #{Time.now}"
 #			file.puts "categories: #{@categories}"
 			file.puts "tags: #{@tag}"
-            file.puts "description:#{@subtitle}"
+            file.puts "description: #{@subtitle}"
 			file.puts "---"
 	end
 #	exec "vi #{@post_name}"
